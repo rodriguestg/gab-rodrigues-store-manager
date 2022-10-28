@@ -19,12 +19,17 @@
     "containerId": "",
     "name": "http://localhost:3001/",
     "url": "http://localhost:3000/products",
-    "method": "GET",
+    "method": "POST",
     "sortNum": 0,
     "created": "2022-10-26T01:24:21.173Z",
-    "modified": "2022-10-27T17:16:54.388Z",
+    "modified": "2022-10-28T18:08:26.656Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Martelo de Thorgfjhfj\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]
