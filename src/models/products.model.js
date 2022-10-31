@@ -44,11 +44,10 @@ const searchProduct = async (term) => {
 };
  
 const deleteById = async (id) => {
-  const [products] = await connection.execute(
+  await connection.execute(
     'DELETE FROM StoreManager.products WHERE id = ?',
     [id],
   );
-  return camelize(products);
  };
 
 module.exports = {
