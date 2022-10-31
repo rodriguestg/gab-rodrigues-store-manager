@@ -41,6 +41,14 @@ const searchProduct = async (term) => {
     [term],
   );
   return camelize(result);
+};
+ 
+const deleteById = async (id) => {
+  const [products] = await connection.execute(
+    'DELETE FROM StoreManager.products WHERE id = ?',
+    [id],
+  );
+  return camelize(products);
  };
 
 module.exports = {
@@ -48,4 +56,5 @@ module.exports = {
   findById,
   insertProduct,
   searchProduct,
+  deleteById,
 };
