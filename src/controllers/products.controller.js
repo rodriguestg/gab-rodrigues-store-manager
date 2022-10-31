@@ -28,8 +28,15 @@ const insertProduct = async (req, res) => {
   res.status(201).json(message);
 };
 
+const searchProduct = async (req, res) => {
+  const { q: searchTerm } = req.query;
+  const { message } = await productsService.searchProduct(searchTerm);
+  res.status(200).json(message);
+};
+
 module.exports = {
   listProduct,
   getProduct,
   insertProduct,
+  searchProduct,
 };

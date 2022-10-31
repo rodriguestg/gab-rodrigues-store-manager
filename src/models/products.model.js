@@ -34,8 +34,18 @@ const insertProduct = async (product) => {
   return insertId;
 };
 
+const searchProduct = async (term) => { 
+  const [result] = await connection.execute(
+    `SELECT * FROM StoreManager.products
+    WHERE NAME LIKE '${term}%'`,
+    [term],
+  );
+  return camelize(result);
+ };
+
 module.exports = {
   findAll,
   findById,
   insertProduct,
+  searchProduct,
 };

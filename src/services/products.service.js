@@ -25,8 +25,18 @@ const createProduct = async (name) => {
   return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
 };
 
+const searchProduct = async (term) => { 
+  if (!term) {
+  const productsAll = await productsModel.findAll();
+    return { type: null, message: productsAll };
+  }
+  const product = await productsModel.searchProduct(term);
+  return { type: null, message: product };
+ };
+
 module.exports = {
   findAll,
   findById,
   createProduct,
+  searchProduct,
 };
